@@ -27,7 +27,9 @@ function App() {
   };
 
   const handleDelete = (id) => {
-    alert(`handleDelete(${id})`);
+    console.log(`handleDelete(${id})`);
+    let updatedItems = items.filter((item) => item.id !== id);
+    setItems(updatedItems);
   };
 
   const handleEdit = (id) => {
