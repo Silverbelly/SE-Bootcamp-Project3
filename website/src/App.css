@@ -1,3 +1,14 @@
+.crupContainer {
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 8px;
+  margin-top: 10px;
+  width: 250px;
+}
+.crupContainer > div {
+  padding: 4px 0px;
+}
+
 .App {
   text-align: center;
 }
