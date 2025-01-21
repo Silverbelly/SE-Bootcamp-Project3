@@ -16,3 +16,9 @@ a:hover {
   color: blue;
 }
 
+.incomplete {
+  text-decoration: none;
+}
+.complete {
+  text-decoration: line-through;
+}

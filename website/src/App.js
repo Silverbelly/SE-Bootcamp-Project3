@@ -1,7 +1,6 @@
 import './App.css';
 import React, { useState, useEffect, useRef } from 'react';
-import TaskList from './TaskList';
-import TaskInsertUpdate from './TaskInsertUpdate';
+import TaskList from './pages/TaskList';
 
 function App() {
   const [items, setItems] = useState([]);
@@ -27,7 +26,6 @@ function App() {
   };
 
   const handleDelete = (id) => {
-    console.log(`handleDelete(${id})`);
     let updatedItems = items.filter((item) => item.id !== id);
     setItems(updatedItems);
   };
@@ -46,21 +44,48 @@ function App() {
 
   const handleSave = () => {
     let updatedItems = [...items];
-    let i = updatedItems.findIndex((item) => item.id === idRef.current.value);
-    if (dateRef.current.value === null) {
-      alert('Invalid Due date.');
-      return;
+    if (operation === 'update') {
+      let i = updatedItems.findIndex((item) => item.id === idRef.current.value);
+      if (dateRef.current.value === null) {
+        alert('Invalid Due date.');
+        return;
+      }
+      //const selectedDate = dateRef.current.value;
+      updatedItems[i].dueDate = getDueDateObject();
+      updatedItems[i].description = descriptionRef.current.value;
+    } else {
+      let newItem = {};
+      newItem.id = getNewId();
+      newItem.isDone = false;
+      newItem.dueDate = getDueDateObject();
+      newItem.description = descriptionRef.current.value;
+      updatedItems.push(newItem);
     }
+    setItems(updatedItems);
+    handleCancelSave();
+  };
+
+  const getNewId = () => {
+    const currentDate = new Date();
+    const id =
+      currentDate.getUTCFullYear().toString().slice(2, 4) +
+      (currentDate.getUTCMonth() + 1).toString().padStart(2, '0') +
+      currentDate.getUTCDate().toString().padStart(2, '0') +
+      currentDate.getUTCHours().toString().padStart(2, '0') +
+      currentDate.getUTCMinutes().toString().padStart(2, '0') +
+      currentDate.getUTCSeconds().toString().padStart(2, '0');
+
+    return id;
+  };
+
+  const getDueDateObject = () => {
     const selectedDate = dateRef.current.value;
-    console.log(selectedDate, selectedDate.slice(0, 4), selectedDate.slice(5, 7), selectedDate.slice(-2));
-    updatedItems[i].dueDate = {
+    const dueDateObject = {
       month: Number(selectedDate.slice(5, 7)) - 1,
       day: Number(selectedDate.slice(-2)),
       year: Number(selectedDate.slice(0, 4)),
     };
-    updatedItems[i].description = descriptionRef.current.value;
-    setItems(updatedItems);
-    handleCancelSave();
+    return dueDateObject;
   };
 
   const handleCancelSave = () => {
@@ -69,7 +94,9 @@ function App() {
     dateRef.current.value = null;
     setOperation('insert');
     setSaveDisabled(true);
-  }
+  };
+
+  const enableButtons = () => {};
 
   // Function to handle toggling the 'done' status
   const toggleDone = (id) => {
@@ -86,31 +113,14 @@ function App() {
 
   return (
     <div>
-      <h1>Task List</h1>
-      <div>
-        <label>Filter by:&nbsp;</label>
-        <label>
-          <input type="radio" value="all" checked={filter === 'all'} onChange={() => setFilter('all')} />
-          All
-        </label>
-        <label>
-          <input type="radio" value="done" checked={filter === 'done'} onChange={() => setFilter('done')} />
-          Done
-        </label>
-        <label>
-          <input type="radio" value="notDone" checked={filter === 'notDone'} onChange={() => setFilter('notDone')} />
-          Not Done
-        </label>
-      </div>
-      {/* <ChildComponent items={filteredItems} toggleDone={toggleDone} /> */}
       <TaskList
         items={filteredItems}
         toggleDone={toggleDone}
         handleEdit={handleEdit}
         handleDelete={handleDelete}
         formattedDate={formattedDate}
-      />
-      <TaskInsertUpdate
+        filter={filter}
+        setFilter={setFilter}
         idRef={idRef}
         descriptionRef={descriptionRef}
         dateRef={dateRef}
@@ -118,6 +128,7 @@ function App() {
         handleSave={handleSave}
         handleCancelSave={handleCancelSave}
         operation={operation}
+        setSaveDisabled={setSaveDisabled}
       />
     </div>
   );
