@@ -1,6 +1,9 @@
 import './App.css';
 import React, { useState, useEffect, useRef } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Layout from './pages/Layout';
 import TaskList from './pages/TaskList';
+import Contact from './pages/Contact';
 
 function App() {
   const [items, setItems] = useState([]);
@@ -112,25 +115,33 @@ function App() {
   });
 
   return (
-    <div>
-      <TaskList
-        items={filteredItems}
-        toggleDone={toggleDone}
-        handleEdit={handleEdit}
-        handleDelete={handleDelete}
-        formattedDate={formattedDate}
-        filter={filter}
-        setFilter={setFilter}
-        idRef={idRef}
-        descriptionRef={descriptionRef}
-        dateRef={dateRef}
-        saveDisabled={saveDisabled}
-        handleSave={handleSave}
-        handleCancelSave={handleCancelSave}
-        operation={operation}
-        setSaveDisabled={setSaveDisabled}
-      />
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route
+          index
+          element={
+            <TaskList
+              items={filteredItems}
+              toggleDone={toggleDone}
+              handleEdit={handleEdit}
+              handleDelete={handleDelete}
+              formattedDate={formattedDate}
+              filter={filter}
+              setFilter={setFilter}
+              idRef={idRef}
+              descriptionRef={descriptionRef}
+              dateRef={dateRef}
+              saveDisabled={saveDisabled}
+              handleSave={handleSave}
+              handleCancelSave={handleCancelSave}
+              operation={operation}
+              setSaveDisabled={setSaveDisabled}
+            />
+          }
+        />
+        <Route path="contact" element={<Contact />} />
+      </Route>
+    </Routes>
   );
 }
 
