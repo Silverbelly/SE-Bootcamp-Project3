@@ -22,3 +22,7 @@ a:hover {
 .complete {
   text-decoration: line-through;
 }
+
+.taskListBodyContainer {
+  margin-top: 60px;
+}

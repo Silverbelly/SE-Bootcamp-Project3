@@ -20,7 +20,7 @@ function TaskList({
   setSaveDisabled,
 }) {
   return (
-    <div>
+    <div className="taskListBodyContainer">
       <h1>Task List</h1>
       <div>
         <label>Filter by:&nbsp;</label>

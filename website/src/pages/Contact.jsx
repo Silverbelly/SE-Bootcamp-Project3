@@ -40,7 +40,7 @@ function Contact() {
   };
 
   return (
-    <div>
+    <div className="contactBodyContainer">
       <div>Contact</div>
       <div className={formContainerClass}>
         <form action="#" method="GET" onSubmit={handleSubmit}>
