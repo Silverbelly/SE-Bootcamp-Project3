@@ -1,28 +1,16 @@
-table td {
-  padding: 0px 8px;
-}
-table th {
-  padding: 0px 8px;
-  text-align: left;
-}
-
-a {
-  font-size: 9pt;
-  text-decoration: underline;
-  margin-left: 5px;
-}
-a:hover {
-  cursor: pointer;
-  color: blue;
+.topPadding {
+  margin-top: 85px !important;
 }
 
 .incomplete {
   text-decoration: none;
 }
+
 .complete {
   text-decoration: line-through;
 }
 
-.taskListBodyContainer {
-  margin-top: 60px;
+.view {
+  width: 120px !important;
 }
+

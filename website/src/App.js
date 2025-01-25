@@ -8,7 +8,7 @@ import Contact from './pages/Contact';
 function App() {
   const [items, setItems] = useState([]);
   const [saveDisabled, setSaveDisabled] = useState(true);
-  const [filter, setFilter] = useState('all'); // 'all', 'done', or 'notDone'
+  const [filter, setFilter] = useState('notDone'); // 'all', 'done', or 'notDone'
   const [operation, setOperation] = useState('insert');
 
   const idRef = useRef();
@@ -19,18 +19,25 @@ function App() {
     fetch('./constants/initialData.json')
       .then((x) => x.json())
       .then((data) => {
-        setItems(data);
+        setItems(data.sort(sortByDate));
       });
   }, []);
 
+  const sortByDate = (a,b) => {
+    const tsA = new Date(a.dueDate.year, a.dueDate.month, a.dueDate.day);
+    const tsB = new Date(b.dueDate.year, b.dueDate.month, b.dueDate.day);
+    return tsA - tsB;
+  };
+
   const formattedDate = (month, day, year) => {
     let myDate = new Date(year, month, day);
-    return myDate.toLocaleString('default', { dateStyle: 'long' });
+    return myDate.toLocaleString('default', { dateStyle: 'medium' });
   };
 
   const handleDelete = (id) => {
     let updatedItems = items.filter((item) => item.id !== id);
     setItems(updatedItems);
+    handleCancelSave();
   };
 
   const handleEdit = (id) => {
@@ -64,7 +71,7 @@ function App() {
       newItem.description = descriptionRef.current.value;
       updatedItems.push(newItem);
     }
-    setItems(updatedItems);
+    setItems(updatedItems.sort(sortByDate));
     handleCancelSave();
   };
 
