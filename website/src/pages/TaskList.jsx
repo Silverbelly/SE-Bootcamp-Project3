@@ -61,14 +61,14 @@ function TaskList({
               let className = 'incomplete';
               if (item.isDone) className = 'complete';
               return (
-                <Row className="pb-1">
-                  <Col key={item.id + '_cb'} xs={2} md={1}>
+                <Row key={item.id} className="pb-1">
+                  <Col xs={2} md={1}>
                     <input type="checkbox" checked={item.isDone} onChange={() => toggleDone(item.id)} />
                   </Col>
-                  <Col key={item.id + '_dt'} xs={3} md={2} className={className}>
+                  <Col xs={3} md={2} className={className}>
                     {formattedDate(item.dueDate.month, item.dueDate.day, item.dueDate.year)}
                   </Col>
-                  <Col key={item.id + '_dsc'} className={className}>
+                  <Col className={className}>
                     {item.description}
                   </Col>
                   <Col xs={3} md={2}>

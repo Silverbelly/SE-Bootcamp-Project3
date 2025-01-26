@@ -106,8 +106,6 @@ function App() {
     setSaveDisabled(true);
   };
 
-  const enableButtons = () => {};
-
   // Function to handle toggling the 'done' status
   const toggleDone = (id) => {
     setItems((prevItems) => prevItems.map((item) => (item.id === id ? { ...item, isDone: !item.isDone } : item)));

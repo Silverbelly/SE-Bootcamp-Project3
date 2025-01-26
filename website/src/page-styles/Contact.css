@@ -1,35 +1,11 @@
 .contactBodyContainer {
-  margin-top: 60px;
+  margin-top: 85px;
 }
 
 .formContainerHidden {
   display: none;
 }
 
-.formContainer input {
-  width: 150px;
-}
-
-.formContainer input[type="email"] {
-  width: 250px;
-}
-
-.formContainer textarea {
-  width: 350px;
-  height: 100px;
-}
-
-.formRow {
-  display: flex;
-  flex-direction: column;
-}
-
 .thankyouContainerHidden {
   display: none;
-}
-
-.thankyouContainer label {
-  display: inline-block;
-  width: 100px;
-  vertical-align: top;
 }
