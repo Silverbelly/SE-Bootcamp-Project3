@@ -2,6 +2,7 @@ import './App.css';
 import React, { useState, useEffect, useRef } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './pages/Layout';
+import NoPage from './pages/NoPage';
 import TaskList from './pages/TaskList';
 import Contact from './pages/Contact';
 
@@ -23,7 +24,7 @@ function App() {
       });
   }, []);
 
-  const sortByDate = (a,b) => {
+  const sortByDate = (a, b) => {
     const tsA = new Date(a.dueDate.year, a.dueDate.month, a.dueDate.day);
     const tsB = new Date(b.dueDate.year, b.dueDate.month, b.dueDate.day);
     return tsA - tsB;
@@ -144,7 +145,30 @@ function App() {
             />
           }
         />
+        <Route
+          path="todos"
+          element={
+            <TaskList
+              items={filteredItems}
+              toggleDone={toggleDone}
+              handleEdit={handleEdit}
+              handleDelete={handleDelete}
+              formattedDate={formattedDate}
+              filter={filter}
+              setFilter={setFilter}
+              idRef={idRef}
+              descriptionRef={descriptionRef}
+              dateRef={dateRef}
+              saveDisabled={saveDisabled}
+              handleSave={handleSave}
+              handleCancelSave={handleCancelSave}
+              operation={operation}
+              setSaveDisabled={setSaveDisabled}
+            />
+          }
+        />
         <Route path="contact" element={<Contact />} />
+        <Route path="*" element={<NoPage />} />
       </Route>
     </Routes>
   );

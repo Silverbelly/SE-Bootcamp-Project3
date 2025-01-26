@@ -32,7 +32,7 @@ function TaskList({
   };
 
   return (
-    <div className="topPadding">
+    <div className="bodyTop">
       <Container className="w-90 justify-content-start">
         <Row>
           <Col className="mb-3">

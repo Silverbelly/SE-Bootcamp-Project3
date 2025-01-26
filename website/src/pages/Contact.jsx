@@ -86,7 +86,7 @@ function Contact() {
 
   return (
     <>
-      <Container className={`w-90 justify-content-start contactBodyContainer ${formContainerClass}`}>
+      <Container className={`w-90 justify-content-start bodyTop ${formContainerClass}`}>
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <Row className="mb-3">
             <Form.Group as={Col} md="6" lg="4" controlId="firstName">
