@@ -1,0 +1,20 @@
+[
+    {
+        "id": "250109090435",
+        "isDone": true,
+        "dueDate": { "month": 1, "day": 1, "year": 2025 },
+        "description": "Pickup Mom from the airport"
+    },
+    {
+        "id": "250109091035",
+        "isDone": false,
+        "dueDate": { "month": 1, "day": 6, "year": 2025 },
+        "description": "Change a/c filter"
+    },
+    {
+        "id": "250109090735",
+        "isDone": false,
+        "dueDate": { "month": 1, "day": 3, "year": 2025 },
+        "description": "Renew car registration ($89.75)"
+    }
+]

@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/SE-Bootcamp-Project3/static/css/main.46c9d074.css",
+    "main.js": "/SE-Bootcamp-Project3/static/js/main.3d03839e.js",
+    "static/js/488.9d97ac5d.chunk.js": "/SE-Bootcamp-Project3/static/js/488.9d97ac5d.chunk.js",
+    "index.html": "/SE-Bootcamp-Project3/index.html",
+    "main.46c9d074.css.map": "/SE-Bootcamp-Project3/static/css/main.46c9d074.css.map",
+    "main.3d03839e.js.map": "/SE-Bootcamp-Project3/static/js/main.3d03839e.js.map",
+    "488.9d97ac5d.chunk.js.map": "/SE-Bootcamp-Project3/static/js/488.9d97ac5d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.46c9d074.css",
+    "static/js/main.3d03839e.js"
+  ]
+}
