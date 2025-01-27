@@ -17,7 +17,7 @@ function App() {
   const dateRef = useRef();
 
   useEffect(() => {
-    fetch('./constants/initialData.json')
+    fetch('/constants/initialData.json')
       .then((x) => x.json())
       .then((data) => {
         setItems(data.sort(sortByDate));
