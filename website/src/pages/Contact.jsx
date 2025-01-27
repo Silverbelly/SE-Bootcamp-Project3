@@ -87,6 +87,10 @@ function Contact() {
   return (
     <>
       <Container className={`w-90 justify-content-start bodyTop ${formContainerClass}`}>
+        <p className="mb-4">
+          If you would like to leave feedback about this web application,<br />
+          enter the details below and click Submit.
+        </p>
         <Form noValidate validated={validated} onSubmit={handleSubmit}>
           <Row className="mb-3">
             <Form.Group as={Col} md="6" lg="4" controlId="firstName">
