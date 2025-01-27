@@ -1,6 +1,7 @@
 {
   "name": "website",
   "version": "0.1.0",
+  "homepage": "https://silverbelly.github.io/se-bootcamp-project3",
   "private": true,
   "dependencies": {
     "bootstrap": "^5.3.3",
