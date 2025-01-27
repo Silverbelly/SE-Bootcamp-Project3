@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/se-bootcamp-project3/static/css/main.46c9d074.css",
-    "main.js": "/se-bootcamp-project3/static/js/main.d3ea3b60.js",
-    "static/js/488.9d97ac5d.chunk.js": "/se-bootcamp-project3/static/js/488.9d97ac5d.chunk.js",
-    "index.html": "/se-bootcamp-project3/index.html",
-    "main.46c9d074.css.map": "/se-bootcamp-project3/static/css/main.46c9d074.css.map",
-    "main.d3ea3b60.js.map": "/se-bootcamp-project3/static/js/main.d3ea3b60.js.map",
-    "488.9d97ac5d.chunk.js.map": "/se-bootcamp-project3/static/js/488.9d97ac5d.chunk.js.map"
+    "main.css": "/se-bootcamp-project3/website/static/css/main.46c9d074.css",
+    "main.js": "/se-bootcamp-project3/website/static/js/main.74e125c5.js",
+    "static/js/488.9d97ac5d.chunk.js": "/se-bootcamp-project3/website/static/js/488.9d97ac5d.chunk.js",
+    "index.html": "/se-bootcamp-project3/website/index.html",
+    "main.46c9d074.css.map": "/se-bootcamp-project3/website/static/css/main.46c9d074.css.map",
+    "main.74e125c5.js.map": "/se-bootcamp-project3/website/static/js/main.74e125c5.js.map",
+    "488.9d97ac5d.chunk.js.map": "/se-bootcamp-project3/website/static/js/488.9d97ac5d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.46c9d074.css",
-    "static/js/main.d3ea3b60.js"
+    "static/js/main.74e125c5.js"
   ]
 }
