@@ -51,7 +51,7 @@ function Contact() {
 
         if (response.ok) {
           setFormContainerClass('formContainerHidden');
-          setThankyouClass('thankyouContainer');
+          setThankyouClass('bodyTop');
         } else {
           console.error('Error submitting form:', response.status);
           setFormContainerClass('formContainerHidden');
