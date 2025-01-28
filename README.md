@@ -6,7 +6,7 @@ Created by Jon Noel (Silverbelly), January 2025
 
 ##### Overview
 
-This is the second project that is part of the UTA Software Engineering Bootcamp,
+This is the third project that is part of the UTA Software Engineering Bootcamp,
 February 2025 cohort, of which I am a part. The purpose of this web application
 is to manage a list of to-do items. Items can be added, edited, and/or deleted
 from the list. A contact form is included for users to leave feedback.
